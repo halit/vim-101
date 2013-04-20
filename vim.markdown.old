@@ -162,13 +162,14 @@
 * :wq - dosyayi kaydet ve cikis yap
 * :r [filename]  - dosya icerigini oku
 * :w %.old - dosyayi farkli isimle kaydetme
-* :0 - dosyanin en basina gitme
-* :22 - 22.satira gitme
-* :$ - dosyanin en sonuna gitme
-* ma - ilgili satiri a diye isaretle
-* mb - ilgili satiri b diye isaretle
-* 'a - a isaretine git
-* y'a - bulundugu satirdan a isaretine kadar tum satirlari kopyala
+* :0 - go to the top of the document
+* :22 - go to line 22
+* :$ - go to the bottom of the document
+* Next you should learn m(arks) - place holders in the current doc.
+* ma - mark the current line as 'a'
+* mb - mark the current line as 'b'
+* 'a - go to mark a
+* y'a - yank all the lines from the current position to mark-a
 
 # Biraz daha ileri vim
 
