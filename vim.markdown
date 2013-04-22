@@ -1,4 +1,4 @@
-% eVim
+# Vim is not a text editor. It is a highly evolved language for communicating with a text editor "
 
 # Vim Felsefesi
 
@@ -44,7 +44,8 @@
 * [operator][sayi][hareket]
 * Tum operatorler ayni hareketi yapar
 * Ogrenmesi cok kolay bir dildir
-* Ornekler: "delete a word" daw, "copy inside quotes" yi'
+* Ornek: "delete a word" daw , "cut inside" ci "test" 'test' (test)
+* select inside the html tags vit ve vat <b>test</b>
 
 # Temeller
 
@@ -70,7 +71,6 @@
 * Bu mod'a giris icin i veya a tuslari kullanilir
 * Baslangic ve satir sonu ile: I and A
 * Bir ileri ve onceki satir: o and O
-* Change operator leaves you in insert mode
 * Giris modundan cikis icin ESC'ye basmak yeterli
 
 ### Uc temel operator
@@ -83,16 +83,15 @@
 ### Hareketler
 
 * Duzenli hareketler
-* Metin objelerri: kelimeler, cumleler, [] bloklar...
+* Metin objeleri: kelimeler, cumleler, [] bloklar...
 * Izler
 * Aramalar
 
 ### Metin objeleri
 
 * Kelimeler ve cumleler: w,W,s,e,E,b,B
+* Satir birlestirme: J
 * Bloklar: `(,[,<,{,",'`
-* XML etikerleri: t
-* b ve B ( ve { icin kisayoldur
 
 ## Coklu dosyalar ile calisma
 
@@ -161,8 +160,11 @@
 * :w! myfile.txt - hata bile verse kaydetmeyi zorla
 * :wq - dosyayi kaydet ve cikis yap
 * :r [filename]  - dosya icerigini oku
+* :r!date
+* ctrl+x 98984
+* gf /etc/passwd
 * :w %.old - dosyayi farkli isimle kaydetme
-* :0 - dosyanin en basina gitme
+* :0 - dosyanin en basina gitme gg - G
 * :22 - 22.satira gitme
 * :$ - dosyanin en sonuna gitme
 * ma - ilgili satiri a diye isaretle
@@ -183,10 +185,10 @@
 ### Olmazsa olmaz sed
 
 * Vim'e mukemmelik katan bir ozellik
-* `:s/<regexp>/<replacement>/[options]`
-* The / separator is arbitrary, you can choose something else
+* `:s/<regexp>/<replacement>/[options]e:`
 * g secenegi tum bulunanlara uygulamayi saglar
 * Her ex komutunda oldugu gibi arama araligi belirlenebilir (ornegin :%s tum dosya icin)
+* test1
 
 ## Makrolar
 
@@ -211,7 +213,6 @@
 * `:[aralik]g/<regexp>/<komut>`
 * Ex komutunu `<komut>` belirlenen aralikte regex ile eslestigi surece calistirir
   (tum dosya ontanimlidir)
-* :v veya :g! satirlardaki *eslesmemeler* de calistirir
 
 ### Birkac ornek
 
@@ -255,7 +256,7 @@ set backspace=2
 
 ### Haritalama nedir?
 
-* Haritalama komut dizilernin kısayollaridir
+* Haritalama komut dizilerinin kısayollaridir
 * Her modda calisirlar
 * Haritalama rekursif olabilir
 * Ornegin: cnoremap bir komut modudur, rekursif olmayan haritalama yapar
@@ -273,7 +274,48 @@ set backspace=2
 * noremap ; :
 * nnoremap Y y$
 
+## Biraz daha komut
+
+* :%s/old/new/g Tum eslesmeleri degistirir
+* :%s/old/new/gw Tum eslesmeleri degistirmeden once sorar
+* :2,35s/old/new/g 2-35 satirlari arasindakileri degistirir
+* :5,$s/old/new/g 5-sayfa sonu arasındaki eslesmeleri degistirir
+* :%s/^/hello/g Her satirin basını degistirir
+* :%s/$/Harry/g Her satirin sonunu degistirir
+* :34,72s/^/#/ 34-72 arasi yorum satiri ekler
+* :34,72/^#// 34-72 arasi yorum satiri siler
+* Ctrl+a Sayiyi arttırır
+* Ctrl+x Sayiyi azaltir
+* Vu Kucuk harf satir
+* VU Buyuk harf satir
+* guu , gUU
+* ga 16lik tabanda ascii degeri, g8 16lik tabanda utf-8 degeri
+* xp Iki karakteri degistirme
+* g~~ Tersine dondurur 
+* Ctrl+r=5+16 21 ekle(insert modunda)
+* :help!
+* '. son degistirdigin satira gitme
+* :ju(mps) tum hareketlerin :history tum komutlarin 
+* :reg tum saklayicilar - "1p 1.registerdan kopyala
+* :296,297 !sort -u Satirlari sirala
+* :r! komut Ciktiyi dosyaya ekle
+* :1,10 w outfile 1-10 satirlari arasini kaydet
+* :1,10 w >>  outfile 1-10 satirlari arasıni ekle
+* :r infile Dosya icerigini ilgili satira ekle
+* :r !ssh <remoteip> cat /path/to/somefile
+* :23r infile Dosya icerigini 23.satira ekle
+* < > Satir yaslama
+
 ## Birkac eklenti
+
+### NerdTree
+### Ctrl+P
+### PowerLine
+### MiniBuffExplorer
+### TagList
+### Python, C
+### Git
+### Django
 
 ### Pathogen
 
@@ -302,7 +344,7 @@ set backspace=2
 * Jan Larres tarafindan yazildi
 * Pencere icinde etiketleri gosterir
 
-### The absolute minimum
+### Minimum
 
 * Her komut veya her haritalamayi gosterme sansimiz yok
 * Olayin arka planinda yatan *fikri* anlamak bu sunumun en buyuk amaci
@@ -311,14 +353,15 @@ set backspace=2
 
 * Marks: :help mark-motions
 * Visual mod: :help visual
-* AVe digerleri
+* Ve digerleri
 
-## Nerden ogrenicez?
+## Nerden ogrenecez?
 
 ### :help
 
 * Vim mukemmel dokumantasyon ile geliyor
 * :help komutunu calistmaniz yeterli
+* :vimtutor
 
 ### vimcasts.org
 
@@ -329,6 +372,19 @@ set backspace=2
 * Mail listeleri: http://www.vim.org/maillist.php
 * IRC: #vim@freenode
 * Reddit: /r/vim
+
+### Tutorials
+
+* http://blog.interlinked.org/tutorials/vim\_tutorial.html
+* http://www.derekwyatt.org/vim/vim-tutorial-videos/
+* http://peepcode.com/products/smash-into-vim-i
+* http://www.youtube.com/watch?v=\_galFWwSDt0
+* http://showmedo.com/videotutorials/series?name=0oSagogCe
+* http://net.tutsplus.com/tutorials/other/venturing-into-vim-new-premium-video-series/
+* http://www.oualline.com/vim-cook.html
+* http://jeffrey-way.com/web-dev/vim-an-amuse-bouche/
+* http://net.tutsplus.com/articles/web-roundups/10-terminal-commands-that-will-boost-your-productivity/
+* http://yehudakatz.com/2010/07/29/everyone-who-tried-to-convince-me-to-use-vim-was-wrong/
 
 ### Vim ayarlarim
 
