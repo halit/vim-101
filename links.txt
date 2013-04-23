@@ -12,3 +12,4 @@ http://ontwik.com/tools/vim-from-novice-to-professional-by-derek-wyatt-p1/
 http://blog.ezyang.com/2010/03/vim-textwidth/
 http://vimperator.org/vimperator
 http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+http://www.reddit.com/r/vim/
