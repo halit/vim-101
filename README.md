@@ -1,13 +1,6 @@
->=>         >=> >=> >=>       >=>
- >=>       >=>  >=> >> >=>   >>=>
-  >=>     >=>   >=> >=> >=> > >=>
-   >=>   >=>    >=> >=>  >=>  >=>
-    >=> >=>     >=> >=>   >>  >=>
-     >===>      >=> >=>       >=>
-      >=>       >=> >=>       >=>
+Vim is not a text editor. It is a highly evolved language for communicating with a text editor
 
-# Vim is not a text editor. It is a highly evolved language for communicating with a text editor
-# Everyone's first vim session. ^C^C^X^X^X^XquitqQ!qdammit[esc]qwertyuiopasdfghjkl;:xwhat
+Everyone's first vim session. ^C^C^X^X^X^XquitqQ!qdammit[esc]qwertyuiopasdfghjkl;:xwhat
 
 # Vim Felsefesi
 
